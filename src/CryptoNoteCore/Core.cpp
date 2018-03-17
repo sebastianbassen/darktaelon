@@ -606,7 +606,7 @@ namespace CryptoNote {
 			return error::BlockValidationError::CUMULATIVE_BLOCK_SIZE_TOO_BIG;
 		}
 
-		if (minerReward != reward && cachedBlock.getBlockIndex() > 13483) {
+		if (minerReward != reward) {
 			logger(Logging::WARNING) << "Block reward mismatch for block " << cachedBlock.getBlockHash()
 				<< ". Expected reward: " << reward << ", got reward: " << minerReward;
 			return error::BlockValidationError::BLOCK_REWARD_MISMATCH;
